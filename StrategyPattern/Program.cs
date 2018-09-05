@@ -10,15 +10,28 @@ namespace StrategyPattern
     /// Strategy Pattern
     /// Changeable and not needed to Refactoring
     /// uses polymorphism, adapted to open-closed princple
-    /// Resources:
-    ///  Martin Fawler-Patterns of Enterprise Application Architecture
-    ///  https://www.dofactory.com/
-    ///  İTÜ-Software Quality
     /// </summary>
     class Program
     {
         static void Main(string[] args)
         {
+            /*
+            Context context;
+
+            context = new Context(new ConcreteStrategyA());
+            context.ContextInterface();
+
+            context = new Context(new ConcreteStrategyB());
+            context.ContextInterface();
+            */
+
+            MasterProgramme programme;
+
+            programme = new MasterProgramme(new EveningEducation());
+            programme.CreateEducationSchedule();
+
+            programme = new MasterProgramme(new OnlineEducation());
+            programme.CreateEducationSchedule();
         }
     }
 }
